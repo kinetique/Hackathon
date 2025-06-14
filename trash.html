@@ -2,9 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Trash website</title>
+    <style>
+        body {
+            background: #fff;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: white;
+            padding: 10px 20px;
+            border: 3px solid hotpink;
+            box-shadow: 0 0 10px red;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        button {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid red;
+            box-shadow: 0 0 10px lime;
+            cursor: pointer;
+            animation: pulse 1s infinite alternate;
+        }
+
+        img {
+            position: absolute;
+            box-shadow: 0 0 20px hotpink;
+            border: 5px dashed red;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
+<h1>Перезавантажуй сторінку!</h1>
+<button onclick="alert('дінаху')">кнопка</button>
+<img src="завантаження (1).jpeg">
+<img src="завантаження (2).jpeg">
+<img src="завантаження (3).jpeg">
+<img src="chinese meme icon.jpeg">
+<img src="chinesecat.jpeg">
+<img src="chinesecat2.jpeg">
+<img src="My cat snail as a snail duh.jpeg">
+<img src="he excitde.jpeg">
+<img src="brainrot1.jpeg">
+<img src="brainrot.jpeg">
 
+<script>
+    const images = document.querySelectorAll('img');
+    const colors = ['red', 'lime', 'magenta', 'cyan', 'yellow', 'blue', 'orange', 'purple', 'hotpink', 'green'];
+
+    images.forEach(img => {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        const randomX = Math.random() * (vw - 100);
+        const randomY = Math.random() * (vh - 100);
+        const randomAngle = Math.random() * 360;
+        const randomScale = 0.5 + Math.random() * 1.5;
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+        img.style.left = `${randomX}px`;
+        img.style.top = `${randomY}px`;
+        img.style.transform = `rotate(${randomAngle}deg) scale(${randomScale})`;
+        img.style.borderColor = randomColor;
+    });
+</script>
 </body>
 </html>
